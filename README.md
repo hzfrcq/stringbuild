@@ -13,11 +13,15 @@ std::string score_text = "Score = ";
 append_string(score_text) << player_score();
 ```
 
-Logger wrapping (see <tt>logging_example.cpp</tt>):
+Logger wrapping of a C-styled <tt>log(... , char \* str)</tt> backend (see <tt>logging_example.cpp</tt>):
 
 ```c++
-LOG_ERROR << "Got an invalid pointer";
+if ( var > LIMIT ) {
+  LOG_ERROR << "var = " << var << ", exceeded " << LIMIT;
+}
 ```
+With an example output of:
+    Sat Feb 28 18:47:25 2015 [ logging_example.cpp:93 ] ERROR var = 103, exceeded 100
 
 
 ## How it works
