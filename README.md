@@ -21,6 +21,7 @@ if ( var > LIMIT ) {
 }
 ```
 With an example output of:
+
     Sat Feb 28 18:47:25 2015 [ logging_example.cpp:93 ] ERROR var = 103, exceeded 100
 
 
