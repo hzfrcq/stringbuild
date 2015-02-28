@@ -1,38 +1,38 @@
 # stringbuild
 A C++11 string utility for constructing strings using streams.
 
-All in one small header-file released under a BSD license (see LICENSE).
+All in one small header-file released under a BSD license (see <tt>LICENSE</tt>).
 
 
 ## Demo snippets
 
-Integer to string conversion (see simple_example.cpp):
+Integer to string conversion (see <tt>simple_example.cpp</tt>):
 
-    std::string score_text = "Score = ";
-    append_string(score_text) << player_score;
-    draw_text(context, x, y, score_text);
+```c++
+std::string score_text = "Score = ";
+append_string(score_text) << player_score();
+```
 
-Logger wrapping (see logging_example.cpp):
+Logger wrapping (see <tt>logging_example.cpp</tt>):
 
-    if( ptr == nullptr ) {
-      LOG_ERROR << "Got an invalid pointer";
-      exit(1);
-    }
+```c++
+LOG_ERROR << "Got an invalid pointer";
+```
 
 
 ## How it works
 
-A stringbuilder class allows the user to create temporary objects that
-can be treated just like any other ostringstream.
-With one major difference, when they are destroyed the will convert the
+A <tt>stringbuilder</tt> class allows the user to create temporary objects that
+can be treated just like any other <tt>ostringstream</tt>.
+With one major difference, when they are destroyed they will convert the
 stream to a string and call a user-defined callback.
 
-The temporary object is created with the stringbuilder constructor which
-takes one parameter; a callback with the signature: void f(const std::string &)
+The temporary object is created with the <tt>stringbuilder</tt> constructor which
+takes one parameter; a callback with the signature: <tt>void f(const std::string &)</tt>.
 
 Two functions with predefined callbacks are already provided:
- * append_string(std::string &), and
- * assign_string(std::string &)
+ * <tt>append_string(std::string &)</tt>, and
+ * <tt>assign_string(std::string &)</tt>
 
 
 ## C++ Compatibility
@@ -42,4 +42,5 @@ lambda expressions.
 
 The code has only been tested with a limited set of compilers and versions.
 
- * GCC/Clang: need to set the -std= flag to gnu++11, c++0x or c++11
+ * GCC/Clang: need to set the <tt>-std=</tt> flag to <tt>gnu++11</tt>, 
+   <tt>c++0x</tt> or <tt>c++11</tt>.
