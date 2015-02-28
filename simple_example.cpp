@@ -1,3 +1,5 @@
+/*
+
 Copyright (c) 2015, Mikael Krekola
 All rights reserved.
 
@@ -21,4 +23,26 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+*/
+
+#include <string>
+#include <iostream>
+#include <stringbuild>
+using namespace std;
+using namespace stringbuild;
+
+int main() {
+
+    /* build strings using stream operator */
+    string msg = "Hello";
+    append_string(msg) << " world!";
+    cout << msg << endl; /* prints "Hello world!" to the screen */
+
+    /* integers to string */
+    assign_string(msg) << 256 << " = " << hex << showbase << 256;
+    cout << msg << endl; /* prints "256 = 0x100" to the screen */
+
+	return 0;
+}
 
