@@ -43,6 +43,6 @@ int main() {
     assign_string(msg) << 256 << " = " << hex << showbase << 256;
     cout << msg << endl; /* prints "256 = 0x100" to the screen */
 
-	return 0;
+    return 0;
 }
 
